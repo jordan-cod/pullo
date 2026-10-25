@@ -3,6 +3,24 @@
     <channel>
         <title>DevNotch</title>
         <item>
+            <title>0.11.4</title>
+            <pubDate>Sun, 25 Oct 2026 18:49:48 +0000</pubDate>
+            <sparkle:version>260</sparkle:version>
+            <sparkle:shortVersionString>0.11.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Changed</h3></div>
+<ul>
+<li>Pullo no longer wakes up on every mouse move: it only follows the pointer while it is over the notch, which cuts its CPU use while you move the mouse elsewhere by about 95%.</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">Fixed</h3></div>
+<ul>
+<li>Opening the panel with the glass style no longer briefly takes about 300 MB of memory. The glass background stays the same size while the panel animates, so it peaks under 30 MB.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.4/Pullo-0.11.4.zip" length="1915251" type="application/octet-stream" sparkle:edSignature="NoHXAg3AMZoL1pxMw+sMG52WPE5NgVvNPF+PrC8FzbFkKGX1uO8aTo8q0uc4/6l3nfVUByQRnUJPKfWrQgubDg=="/>
+        </item>
+        <item>
             <title>0.11.3</title>
             <pubDate>Sun, 25 Oct 2026 15:00:07 +0000</pubDate>
             <sparkle:version>251</sparkle:version>
@@ -30,20 +48,6 @@
 </ul>
 ]]></description>
             <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.2/Pullo-0.11.2.zip" length="1911287" type="application/octet-stream" sparkle:edSignature="qmtU+NRzmY8G5aE4mmI/dvCAjVvm6besYNCXnIj17Rgs4ZENtX3TAhB/xwWV2bRA0iJrX0e8EiH1jtUHg2caBg=="/>
-        </item>
-        <item>
-            <title>0.11.1</title>
-            <pubDate>Fri, 23 Oct 2026 16:45:08 +0000</pubDate>
-            <sparkle:version>243</sparkle:version>
-            <sparkle:shortVersionString>0.11.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Changed</h3></div>
-<ul>
-<li>Each Settings page has its own colored icon in the sidebar, like System Settings.</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.1/Pullo-0.11.1.zip" length="1908325" type="application/octet-stream" sparkle:edSignature="svkRpjCtycZFUYE0R5SU39izRyaF1xgvjNUkqo8QsVFxf0H4mePfuoXR5gI+2CcHOFlGc77S+7emFO6DB8ZVAQ=="/>
         </item>
         <item>
             <title>0.8.0-beta.5</title>
