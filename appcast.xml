@@ -3,6 +3,21 @@
     <channel>
         <title>DevNotch</title>
         <item>
+            <title>0.11.3</title>
+            <pubDate>Sun, 25 Oct 2026 15:00:07 +0000</pubDate>
+            <sparkle:version>251</sparkle:version>
+            <sparkle:shortVersionString>0.11.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Fixed</h3></div>
+<ul>
+<li>A long account name on an alert stays on one line and shortens in the middle instead of wrapping.</li>
+<li>Wide alert icons, like the team review one, fit inside their circle.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.3/Pullo-0.11.3.zip" length="1911108" type="application/octet-stream" sparkle:edSignature="1g2q4fXH2ZKcPaLrAi+V7YBhHlTb+g5M13uP3XCeRNfBYExbf6BaJYFCmLFRNtCIpmHZt/EUkcZVYerbg4sqBQ=="/>
+        </item>
+        <item>
             <title>0.11.2</title>
             <pubDate>Fri, 23 Oct 2026 18:12:20 +0000</pubDate>
             <sparkle:version>247</sparkle:version>
@@ -29,59 +44,6 @@
 </ul>
 ]]></description>
             <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.1/Pullo-0.11.1.zip" length="1908325" type="application/octet-stream" sparkle:edSignature="svkRpjCtycZFUYE0R5SU39izRyaF1xgvjNUkqo8QsVFxf0H4mePfuoXR5gI+2CcHOFlGc77S+7emFO6DB8ZVAQ=="/>
-        </item>
-        <item>
-            <title>0.11.0</title>
-            <pubDate>Fri, 23 Oct 2026 16:21:30 +0000</pubDate>
-            <sparkle:version>238</sparkle:version>
-            <sparkle:shortVersionString>0.11.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Added</h3></div>
-<ul>
-<li>A "Team reviews" example tab, and a Review option for pull requests requested from one of your teams, picked from the teams GitHub says you're on. The Review menu also tells "me or my teams" apart from "me only".</li>
-<li>On a Mac without a notch, Pullo now shows a small tab at the top of the screen, so you can find it and hover it. CI progress shows on it too.</li>
-<li>Opening Pullo again from Finder or Spotlight opens the panel.</li>
-<li>While you set up, copy the <code>gh auth login</code> command or open Terminal right from the panel. Pullo adds your account as soon as you log in.</li>
-<li>⌘, in the panel opens Settings.</li>
-<li>Choose which display Pullo shows on: the built-in one, the main one, or the one with the pointer (Settings → General).</li>
-<li>Pick another shortcut to open the panel, or turn it off (Settings → Shortcuts), handy since ⌥⌘P is also Finder's Show Path Bar. Pullo tells you when another app already uses the shortcut.</li>
-<li>Pullo can hold alerts while an app is full screen and show one summary when you leave, like during Focus (Settings → Alerts). It's off by default.</li>
-<li>The Actions list works from the keyboard: ↑↓ pick a run, ↩ opens it, ↩ again opens it on GitHub and esc goes back.</li>
-<li>VoiceOver reads alerts and confirmations out loud as they appear, tells which pull request tab is selected and how many PRs it has, and can show a PR's failed checks.</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">Changed</h3></div>
-<ul>
-<li>The panel stays open while you set up your first account, even when you switch to Terminal. "Not now" closes it.</li>
-<li>When the panel opens under the pointer, the arrow keys, Return and Esc work right away.</li>
-<li>The welcome alert mentions the ⌥⌘P shortcut.</li>
-<li>Pullo uses less battery and network. It stops checking GitHub while your Mac is asleep, its screen is off or locked, or it's offline, and checks once as soon as you're back. With the panel closed, the Actions side only keeps a close eye on runs you started.</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">Fixed</h3></div>
-<ul>
-<li>When adding an account fails, Pullo says what went wrong in plain words and offers a way to fix it.</li>
-<li>When GitHub's request limit is reached, Pullo waits until it resets instead of asking again every minute. When GitHub keeps failing, it waits a bit longer each time, up to five minutes, and when your sign-in is rejected it stops asking until you try again.</li>
-<li>Pullo now finds gh installed with MacPorts, Nix, mise or anywhere on your shell's PATH, and reads gh's settings from <code>XDG_CONFIG_HOME</code> when you use it.</li>
-<li>A slow or broken gh no longer holds Pullo up, and Pullo stops asking it for a token on every refresh after it fails. "Check again" in Settings → Accounts asks right away.</li>
-<li>After GitHub was slow once, Pullo kept asking for shorter lists until you quit it. It now goes back to the full lists after half an hour, and a slow connection on your side no longer counts.</li>
-<li>Repositories your organization blocks with single sign-on no longer slow down the Actions side.</li>
-<li>Removing an account while Pullo was refreshing could bring its pull requests and runs back.</li>
-<li>Re-running or cancelling a run while the Actions list was refreshing now shows the new state right away instead of on the next check.</li>
-<li>If Pullo can't read some of your saved tabs, for example after using an older version, it keeps the ones it can read instead of replacing them all, and keeps a copy of the rest.</li>
-<li>A pull request that briefly drops out of GitHub's results no longer alerts you again about the same review request or forgets what you've already read.</li>
-<li>Fixed a crash when GitHub listed the same pull request twice.</li>
-<li>Pullo no longer uses more and more memory the longer it runs.</li>
-<li>When gh's token is revoked, the Actions side now picks up the new one once you sign in again, like the pull request side does.</li>
-<li>With Reduce Motion on, the panel fades instead of bouncing, and the loading screen and lists no longer slide, blur or shimmer.</li>
-<li>With Increase Contrast on, dimmed text in the panel is brighter and easier to read. Section titles in Actions and the keyboard hints are a little easier to read too.</li>
-<li>Time units like "5m" and "2h" now follow the app's language, and a message in Settings → Accounts is now translated.</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">Security</h3></div>
-<ul>
-<li>Links from checks only open web pages (http and https), so a check can't point Pullo at a file or another app.</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.0/Pullo-0.11.0.zip" length="1906738" type="application/octet-stream" sparkle:edSignature="bgmSs/D+vNTosh9FQ7vs7tXjf7Jy6CNjnZGJ7TKqNmrfbq+y6dt1WzOpo45LLPyY13K4V0+GY8OxdVpMFfZCBg=="/>
         </item>
         <item>
             <title>0.8.0-beta.5</title>
