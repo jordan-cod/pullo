@@ -21,6 +21,7 @@ final class NotchInteraction {
     private let liveCIModel: LiveCIModel
     private let runs: RunStore
     private let accounts: AccountStore
+    private let settings: AppSettings
     private let system: any SystemActions
     private let clock: any Clock<Duration>
 
@@ -40,6 +41,7 @@ final class NotchInteraction {
         liveCI: LiveCIModel,
         runs: RunStore,
         accounts: AccountStore,
+        settings: AppSettings,
         system: any SystemActions,
         geometry: NotchGeometry,
         clock: any Clock<Duration> = ContinuousClock()
@@ -50,6 +52,7 @@ final class NotchInteraction {
         liveCIModel = liveCI
         self.runs = runs
         self.accounts = accounts
+        self.settings = settings
         self.system = system
         self.geometry = geometry
         self.clock = clock
@@ -79,7 +82,7 @@ final class NotchInteraction {
         case .peek:
             peeks.pointerMoved(over: inside)
         case .closed:
-            guard inside else { return cancelHover() }
+            guard inside, settings.opensOnHover else { return cancelHover() }
             scheduleHover(after: .milliseconds(80)) { notch in
                 if notch.isPointerOver(notch.state) { notch.open() }
             }
@@ -93,6 +96,10 @@ final class NotchInteraction {
                 if !notch.isPointerOver(.open), !notch.buttonHeld { notch.close() }
             }
         }
+    }
+
+    func clickedNotch() {
+        if state == .closed { open() }
     }
 
     func mouseDown(at point: NSPoint) {

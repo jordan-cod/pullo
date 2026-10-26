@@ -142,8 +142,14 @@ final class NotchPanelController {
         }) {
             monitors.append(global)
         }
-        if let local = NSEvent.addLocalMonitorForEvents(matching: .leftMouseUp, handler: { [weak self] event in
-            MainActor.assumeIsolated { self?.pointerChanged() }
+        if let local = NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown, .leftMouseUp], handler: { [weak self, panel] event in
+            MainActor.assumeIsolated {
+                if event.type == .leftMouseDown {
+                    if event.window === panel { self?.notch.clickedNotch() }
+                } else {
+                    self?.pointerChanged()
+                }
+            }
             return event
         }) {
             monitors.append(local)

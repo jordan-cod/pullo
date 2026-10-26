@@ -5797,6 +5797,38 @@
           }
         }
       }
+    },
+    "Open when the pointer reaches the notch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir cuando el puntero llega al notch"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir quando o ponteiro chega no notch"
+          }
+        }
+      }
+    },
+    "Turn this off if another notch app opens on hover too. Click the notch or press your shortcut to open Pullo.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactívalo si otra app del notch también se abre al pasar el puntero. Haz clic en el notch o usa tu atajo para abrir Pullo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desative se outro app de notch também abre ao passar o ponteiro. Clique no notch ou use seu atalho para abrir o Pullo."
+          }
+        }
+      }
     }
   },
   "version": "1.0"
