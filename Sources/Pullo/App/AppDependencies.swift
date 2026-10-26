@@ -68,6 +68,7 @@ final class AppDependencies {
             liveCI: LiveCIModel(prs: store, runs: runs, accounts: accounts, settings: settings, peeks: peeks),
             runs: runs,
             accounts: accounts,
+            settings: settings,
             system: system,
             geometry: geometry ?? settings.display.screen().map { NotchGeometry(screen: $0) } ?? .placeholder,
             clock: clock

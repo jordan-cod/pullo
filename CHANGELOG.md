@@ -4,6 +4,10 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+### Added
+- You can turn off opening Pullo when the pointer reaches the notch, so it doesn't compete with other notch apps that open on hover. Click the notch or press your shortcut to open it instead. Thanks to [@ZUBERKHAN034](https://github.com/ZUBERKHAN034) for the idea.
+- Clicking the notch opens Pullo.
+
 ## [0.11.4] - 2026-10-25
 
 ### Changed

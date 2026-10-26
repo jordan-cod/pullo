@@ -14,6 +14,24 @@ extension NotchBehavior {
             #expect(h.notch.state == .open)
         }
 
+        @Test func hoveringCanBeTurnedOff() async {
+            let h = await NotchHarness()
+            h.settings.opensOnHover = false
+            h.notch.mouseMoved(to: h.inside(.closed))
+            await h.clock.advance(by: .seconds(1))
+            #expect(h.notch.state == .closed)
+            h.notch.clickedNotch()
+            #expect(h.notch.state == .open)
+        }
+
+        @Test func clickingTheNotchOpensIt() async {
+            let h = await NotchHarness()
+            h.notch.clickedNotch()
+            #expect(h.notch.state == .open)
+            h.notch.clickedNotch()
+            #expect(h.notch.state == .open)
+        }
+
         @Test func passingOverTheNotchDoesNotOpenIt() async {
             let h = await NotchHarness()
             h.notch.mouseMoved(to: h.inside(.closed))

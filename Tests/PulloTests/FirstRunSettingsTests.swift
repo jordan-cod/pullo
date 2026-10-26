@@ -40,6 +40,7 @@ struct FirstRunSettingsTests {
         #expect(settings.display == .builtIn)
         #expect(settings.shortcut.shortcut == .togglePanel)
         #expect(!settings.holdsAlertsInFullScreen)
+        #expect(settings.opensOnHover)
     }
 
     @Test func choicesAreRemembered() {
@@ -48,10 +49,12 @@ struct FirstRunSettingsTests {
         settings.display = .pointer
         settings.shortcut = .controlOptionP
         settings.holdsAlertsInFullScreen = true
+        settings.opensOnHover = false
         let reloaded = AppSettings(defaults: scratch.defaults)
         #expect(reloaded.display == .pointer)
         #expect(reloaded.shortcut.shortcut?.symbols == "⌃⌥P")
         #expect(reloaded.holdsAlertsInFullScreen)
+        #expect(!reloaded.opensOnHover)
     }
 
     @Test func theShortcutCanBeTurnedOff() {
