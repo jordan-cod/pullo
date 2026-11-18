@@ -56,7 +56,7 @@ final class NotchInteraction {
         peeks.host = self
     }
 
-    var layout: NotchLayout { NotchLayout(geometry: geometry, closedWings: liveCI?.wingWidth ?? 0) }
+    var layout: NotchLayout { NotchLayout(geometry: geometry, live: liveCI) }
 
     var liveCI: LiveCI? { liveCIModel.current }
 

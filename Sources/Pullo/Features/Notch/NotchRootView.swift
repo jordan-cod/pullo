@@ -45,6 +45,11 @@ struct NotchRootView: View {
     private func panel(state: NotchState, size: CGSize, radii: (top: CGFloat, bottom: CGFloat), shape: NotchShape) -> some View {
         VStack(spacing: 0) {
             TopBar()
+            if state == .closed, let live = notch.liveCI, live.placement == .below {
+                LiveCIView(live: live, notchWidth: notch.geometry.notchSize.width)
+                    .frame(height: LiveCI.dropHeight)
+                    .transition(.opacity)
+            }
             if state == .peek, let alert = notch.peekAlert {
                 PeekView(alert: alert) { notch.tapPeek(alert) }
                     .id(alert.id)

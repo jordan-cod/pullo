@@ -6,7 +6,7 @@ struct TopBar: View {
     var body: some View {
         let notchSize = notch.geometry.notchSize
         ZStack {
-            if notch.state == .closed, let live = notch.liveCI {
+            if notch.state == .closed, let live = notch.liveCI, live.placement == .beside {
                 LiveCIView(live: live, notchWidth: notchSize.width)
                     .frame(width: notch.layout.size(for: .closed).width)
                     .transition(.opacity)

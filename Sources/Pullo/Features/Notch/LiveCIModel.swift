@@ -26,6 +26,7 @@ final class LiveCIModel {
     var current: LiveCI? {
         guard settings.showsLiveCI, var live = peeks.finishedCI ?? running else { return nil }
         live.label = settings.liveCILabel
+        live.placement = settings.liveCIPlacement
         return live
     }
 

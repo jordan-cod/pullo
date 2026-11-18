@@ -22,6 +22,13 @@ struct AppSettingsTests {
         #expect(AppSettings(defaults: scratch.defaults).liveCILabel == .both)
     }
 
+    @Test func ciProgressShowsBelowTheNotchUntilBesideIsChosen() {
+        let scratch = ScratchDefaults()
+        #expect(AppSettings(defaults: scratch.defaults).liveCIPlacement == .below)
+        AppSettings(defaults: scratch.defaults).liveCIPlacement = .beside
+        #expect(AppSettings(defaults: scratch.defaults).liveCIPlacement == .beside)
+    }
+
     @Test func soundsChosenPerKindAreRemembered() {
         let scratch = ScratchDefaults()
         AppSettings(defaults: scratch.defaults).categorySounds = [.ciFailed: "Basso", .ciPassed: ""]
