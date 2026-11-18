@@ -4,6 +4,9 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+### Fixed
+- While checks are running, the notch no longer disappears for a second after you move the pointer away from the open panel.
+
 ## [0.11.4] - 2026-10-25
 
 ### Changed
