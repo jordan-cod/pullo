@@ -9,4 +9,9 @@ struct NotchPanelTests {
         let panel = NotchPanel(rootView: EmptyView())
         #expect(panel.effectiveAppearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua)
     }
+
+    @Test func showsAndHidesWithoutFading() {
+        let panel = NotchPanel(rootView: EmptyView())
+        #expect(panel.animationBehavior == .none)
+    }
 }
