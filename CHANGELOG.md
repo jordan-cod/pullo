@@ -4,6 +4,8 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-11-17
+
 ### Changed
 - CI progress now shows below the notch, so it no longer covers the menu bar icons next to it. To keep it beside the notch, choose Beside the notch in Settings › Appearance.
 
@@ -323,7 +325,8 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 - An alert stays open while the pointer is over it.
 - Clicks only land on the visible part of the notch. Everywhere else they go to the app behind it.
 
-[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.11.4...HEAD
+[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/jordan-cod/pullo/compare/v0.11.4...v0.12.0
 [0.11.4]: https://github.com/jordan-cod/pullo/compare/v0.11.3...v0.11.4
 [0.11.3]: https://github.com/jordan-cod/pullo/compare/v0.11.2...v0.11.3
 [0.11.2]: https://github.com/jordan-cod/pullo/compare/v0.11.1...v0.11.2
