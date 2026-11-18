@@ -21,12 +21,17 @@ struct AppearancePage: View {
                 Toggle("Show CI progress on the notch", isOn: $settings.showsLiveCI)
                     .toggleStyle(.switch)
                 if settings.showsLiveCI {
+                    PreviewPicker(options: LiveCIPlacement.allCases, selection: $settings.liveCIPlacement, title: \.title) { placement in
+                        LiveCIPreview(label: settings.liveCILabel, placement: placement)
+                    }
                     PreviewPicker(options: LiveCILabel.allCases, selection: $settings.liveCILabel, title: \.title) { label in
-                        LiveCIPreview(label: label)
+                        LiveCIPreview(label: label, placement: settings.liveCIPlacement)
                     }
                 }
             } footer: {
-                Text("While checks run on your pull requests, the notch widens to show their progress.")
+                Text(
+                    "While checks run on your pull requests, the notch shows their progress. Below the notch keeps the menu bar icons beside it visible."
+                )
             }
         }
     }

@@ -2,6 +2,7 @@ import Foundation
 
 struct LiveCI: Equatable {
     static let maxNameLength = 14
+    static let dropHeight: CGFloat = 24
 
     let id: String
     let name: String
@@ -11,6 +12,7 @@ struct LiveCI: Equatable {
     var othersRunning = 0
     var finished: CIState?
     var label: LiveCILabel = .number
+    var placement: LiveCIPlacement = .below
 
     init(pr: PullRequest, othersRunning: Int = 0, finished: CIState? = nil, label: LiveCILabel = .number) {
         id = pr.id
@@ -46,6 +48,21 @@ struct LiveCI: Equatable {
         return max(46, max(leading, trailing) + 20)
     }
 
+    var belowWidth: CGFloat {
+        var width: CGFloat = 14
+        if showsNumberBeside { width += 5 + Self.width(of: name) }
+        if let trailingText { width += 5 + Self.width(of: trailingText) }
+        if let othersText { width += 5 + Self.width(of: othersText) + 8 }
+        return width + 28
+    }
+
+    func closedSize(around notch: CGSize) -> CGSize {
+        switch placement {
+        case .beside: CGSize(width: notch.width + wingWidth * 2, height: notch.height)
+        case .below: CGSize(width: max(notch.width, belowWidth), height: notch.height + Self.dropHeight)
+        }
+    }
+
     private static func width(of text: String) -> CGFloat { CGFloat(text.count) * 7 }
 
     private static func shortened(_ name: String) -> String {
@@ -61,6 +78,17 @@ enum LiveCILabel: String, CaseIterable {
         case .number: String(localized: "PR number")
         case .checks: String(localized: "Checks done")
         case .both: String(localized: "Both")
+        }
+    }
+}
+
+enum LiveCIPlacement: String, CaseIterable {
+    case below, beside
+
+    var title: String {
+        switch self {
+        case .below: String(localized: "Below the notch")
+        case .beside: String(localized: "Beside the notch")
         }
     }
 }

@@ -4352,22 +4352,6 @@
         }
       }
     },
-    "While checks run on your pull requests, the notch widens to show their progress.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mientras se ejecutan los checks de tus pull requests, el notch se ensancha para mostrar su progreso."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enquanto os checks rodam nos seus pull requests, o notch se alarga para mostrar o progresso."
-          }
-        }
-      }
-    },
     "While you were in Focus": {
       "localizations": {
         "es": {
@@ -5794,6 +5778,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "Essa busca cobriria o GitHub inteiro. Adicione um autor, repositório ou organização."
+          }
+        }
+      }
+    },
+    "Below the notch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Debajo del notch"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Embaixo do notch"
+          }
+        }
+      }
+    },
+    "Beside the notch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junto al notch"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ao lado do notch"
+          }
+        }
+      }
+    },
+    "While checks run on your pull requests, the notch shows their progress. Below the notch keeps the menu bar icons beside it visible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mientras se ejecutan los checks de tus pull requests, el notch muestra su progreso. Debajo del notch deja a la vista los iconos de la barra de menús que tiene al lado."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enquanto os checks rodam nos seus pull requests, o notch mostra o progresso. Embaixo do notch deixa visíveis os ícones da barra de menus ao lado dele."
           }
         }
       }

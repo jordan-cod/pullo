@@ -4,6 +4,9 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+### Changed
+- CI progress now shows below the notch, so it no longer covers the menu bar icons next to it. To keep it beside the notch, choose Beside the notch in Settings › Appearance.
+
 ## [0.11.4] - 2026-10-25
 
 ### Changed

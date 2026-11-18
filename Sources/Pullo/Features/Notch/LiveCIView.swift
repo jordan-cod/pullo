@@ -5,12 +5,22 @@ struct LiveCIView: View {
     let notchWidth: CGFloat
 
     var body: some View {
-        HStack(spacing: 0) {
-            leading
-                .frame(maxWidth: .infinity)
-            Color.clear.frame(width: notchWidth)
-            counter
-                .frame(maxWidth: .infinity)
+        Group {
+            switch live.placement {
+            case .beside:
+                HStack(spacing: 0) {
+                    leading
+                        .frame(maxWidth: .infinity)
+                    Color.clear.frame(width: notchWidth)
+                    counter
+                        .frame(maxWidth: .infinity)
+                }
+            case .below:
+                HStack(spacing: 5) {
+                    leading
+                    counter
+                }
+            }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityText)
