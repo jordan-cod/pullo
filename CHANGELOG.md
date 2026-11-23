@@ -4,6 +4,12 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+## [0.12.1] - 2026-11-23
+
+### Changed
+- CI progress shows beside the notch again by default. To show it below the notch, choose Below the notch in Settings › Appearance.
+- Inside a job, the step that is running, or the last one that ran, is listed first, so you no longer scroll to see what is happening now. Steps that have not started stay at the end.
+
 ## [0.12.0] - 2026-11-17
 
 ### Changed
@@ -325,7 +331,8 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 - An alert stays open while the pointer is over it.
 - Clicks only land on the visible part of the notch. Everywhere else they go to the app behind it.
 
-[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.12.0...HEAD
+[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.12.1...HEAD
+[0.12.1]: https://github.com/jordan-cod/pullo/compare/v0.12.0...v0.12.1
 [0.12.0]: https://github.com/jordan-cod/pullo/compare/v0.11.4...v0.12.0
 [0.11.4]: https://github.com/jordan-cod/pullo/compare/v0.11.3...v0.11.4
 [0.11.3]: https://github.com/jordan-cod/pullo/compare/v0.11.2...v0.11.3

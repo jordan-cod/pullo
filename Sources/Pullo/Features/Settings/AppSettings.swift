@@ -39,7 +39,7 @@ final class AppSettings {
         panelStyle = (defaults.object(for: .panelStyle) as? String).flatMap(PanelStyle.init(rawValue:)) ?? .solid
         showsLiveCI = defaults.object(for: .liveCI) as? Bool ?? true
         liveCILabel = (defaults.object(for: .liveCILabel) as? String).flatMap(LiveCILabel.init(rawValue:)) ?? .number
-        liveCIPlacement = (defaults.object(for: .liveCIPlacement) as? String).flatMap(LiveCIPlacement.init(rawValue:)) ?? .below
+        liveCIPlacement = (defaults.object(for: .liveCISide) as? String).flatMap(LiveCIPlacement.init(rawValue:)) ?? .beside
         display = (defaults.object(for: .display) as? String).flatMap(DisplayChoice.init(rawValue:)) ?? .builtIn
         shortcut = (defaults.object(for: .shortcut) as? String).flatMap(ShortcutChoice.init(rawValue:)) ?? .optionCommandP
         holdsAlertsInFullScreen = defaults.object(for: .holdInFullScreen) as? Bool ?? false
@@ -91,7 +91,7 @@ final class AppSettings {
         defaults.set(panelStyle.rawValue, for: .panelStyle)
         defaults.set(showsLiveCI, for: .liveCI)
         defaults.set(liveCILabel.rawValue, for: .liveCILabel)
-        defaults.set(liveCIPlacement.rawValue, for: .liveCIPlacement)
+        defaults.set(liveCIPlacement.rawValue, for: .liveCISide)
         defaults.set(display.rawValue, for: .display)
         defaults.set(shortcut.rawValue, for: .shortcut)
         defaults.set(holdsAlertsInFullScreen, for: .holdInFullScreen)

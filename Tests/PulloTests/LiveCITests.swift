@@ -25,20 +25,20 @@ extension NotchBehavior {
             #expect(h.notch.liveCI?.othersRunning == 1)
         }
 
-        @Test func dropsBelowTheClosedNotchWhileChecksRun() async {
+        @Test func dropsBelowTheClosedNotchWhenShownBelowIt() async {
             let idle = await NotchHarness()
             let busy = await NotchHarness(mine: [Self.running("PR_1", minutesAgo: 1)])
-            #expect(idle.notch.liveCI == nil)
+            busy.settings.liveCIPlacement = .below
             let closed = busy.notch.layout.size(for: .closed)
             #expect(closed.width == idle.notch.layout.size(for: .closed).width)
             #expect(closed.height == idle.notch.layout.size(for: .closed).height + LiveCI.dropHeight)
             #expect(busy.notch.layout.hitRect(for: .closed).height > idle.notch.layout.hitRect(for: .closed).height)
         }
 
-        @Test func widensTheClosedNotchWhenShownBesideIt() async {
+        @Test func widensTheClosedNotchWhileChecksRun() async {
             let idle = await NotchHarness()
             let busy = await NotchHarness(mine: [Self.running("PR_1", minutesAgo: 1)])
-            busy.settings.liveCIPlacement = .beside
+            #expect(idle.notch.liveCI == nil)
             let closed = busy.notch.layout.size(for: .closed)
             #expect(closed.width > idle.notch.layout.size(for: .closed).width)
             #expect(closed.height == idle.notch.layout.size(for: .closed).height)
@@ -47,6 +47,7 @@ extension NotchBehavior {
 
         @Test func growsWiderBelowANarrowNotchWhenTheLabelDoesNotFit() async {
             let h = await NotchHarness(mine: [Self.running("PR_1", minutesAgo: 1)])
+            h.settings.liveCIPlacement = .below
             h.notch.geometry.notchSize.width = 60
             h.settings.liveCILabel = .both
             #expect(h.notch.layout.size(for: .closed).width > 60)
@@ -64,7 +65,6 @@ extension NotchBehavior {
 
         @Test func followsTheChosenLabel() async {
             let h = await NotchHarness(mine: [Self.running("PR_1", minutesAgo: 1)])
-            h.settings.liveCIPlacement = .beside
             #expect(h.notch.liveCI?.trailingText == "#383")
             h.settings.liveCILabel = .checks
             #expect(h.notch.liveCI?.trailingText == "3/5")
