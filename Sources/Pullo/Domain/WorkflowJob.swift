@@ -9,6 +9,8 @@ struct WorkflowStep: Identifiable, Equatable {
 
     var id: Int { number }
 
+    var hasStarted: Bool { [.running, .passed, .failed, .cancelled].contains(state) }
+
     func duration(now: Date) -> TimeInterval? {
         guard let startedAt, state != .skipped, state != .queued else { return nil }
         return (completedAt ?? now).timeIntervalSince(startedAt)
@@ -27,6 +29,11 @@ struct WorkflowJob: Identifiable, Equatable {
     var failedStep: String? { steps.first { $0.state == .failed }?.name }
 
     var currentStep: String? { steps.first { $0.state == .running }?.name }
+
+    var stepsLatestFirst: [WorkflowStep] {
+        guard let reached = steps.lastIndex(where: \.hasStarted) else { return steps }
+        return steps[...reached].reversed() + steps[(reached + 1)...]
+    }
 
     var group: String {
         guard let open = name.range(of: " ("), name.hasSuffix(")") else { return name }

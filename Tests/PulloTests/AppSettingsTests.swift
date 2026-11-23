@@ -22,10 +22,16 @@ struct AppSettingsTests {
         #expect(AppSettings(defaults: scratch.defaults).liveCILabel == .both)
     }
 
-    @Test func ciProgressShowsBelowTheNotchUntilBesideIsChosen() {
+    @Test func ciProgressShowsBesideTheNotchUntilBelowIsChosen() {
         let scratch = ScratchDefaults()
+        #expect(AppSettings(defaults: scratch.defaults).liveCIPlacement == .beside)
+        AppSettings(defaults: scratch.defaults).liveCIPlacement = .below
         #expect(AppSettings(defaults: scratch.defaults).liveCIPlacement == .below)
-        AppSettings(defaults: scratch.defaults).liveCIPlacement = .beside
+    }
+
+    @Test func ciProgressIgnoresThePlacementSavedBy0120() {
+        let scratch = ScratchDefaults()
+        scratch.defaults.set("below", forKey: "liveCIPlacement")
         #expect(AppSettings(defaults: scratch.defaults).liveCIPlacement == .beside)
     }
 

@@ -12,7 +12,7 @@ struct LiveCI: Equatable {
     var othersRunning = 0
     var finished: CIState?
     var label: LiveCILabel = .number
-    var placement: LiveCIPlacement = .below
+    var placement: LiveCIPlacement = .beside
 
     init(pr: PullRequest, othersRunning: Int = 0, finished: CIState? = nil, label: LiveCILabel = .number) {
         id = pr.id
@@ -83,12 +83,12 @@ enum LiveCILabel: String, CaseIterable {
 }
 
 enum LiveCIPlacement: String, CaseIterable {
-    case below, beside
+    case beside, below
 
     var title: String {
         switch self {
-        case .below: String(localized: "Below the notch")
         case .beside: String(localized: "Beside the notch")
+        case .below: String(localized: "Below the notch")
         }
     }
 }

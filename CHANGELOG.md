@@ -4,6 +4,10 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+### Changed
+- CI progress shows beside the notch again by default. To show it below the notch, choose Below the notch in Settings › Appearance.
+- Inside a job, the step that is running, or the last one that ran, is listed first, so you no longer scroll to see what is happening now. Steps that have not started stay at the end.
+
 ## [0.12.0] - 2026-11-17
 
 ### Changed

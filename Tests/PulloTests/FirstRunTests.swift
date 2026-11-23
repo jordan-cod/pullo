@@ -67,7 +67,7 @@ extension NotchBehavior {
                 hasNotch: false
             )
             #expect(h.notch.liveCI?.id == "PR_1")
-            #expect(h.notch.layout.size(for: .closed).height > 24)
+            #expect(h.notch.layout.size(for: .closed).width > NotchGeometry.pillWidth)
         }
     }
 }
