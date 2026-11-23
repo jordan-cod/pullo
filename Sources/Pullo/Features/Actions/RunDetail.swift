@@ -230,7 +230,7 @@ private struct JobRow: View {
         .disabled(!hasSteps && job.url == nil)
         .hint(hint)
         if isExpanded {
-            ForEach(job.stepsLatestFirst) { step in
+            ForEach(job.steps) { step in
                 StepRow(step: step, now: now, url: url(of: step))
             }
             .padding(.leading, 20)

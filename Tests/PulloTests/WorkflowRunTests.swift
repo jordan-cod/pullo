@@ -101,22 +101,6 @@ struct WorkflowRunTests {
         #expect(jobs[2].steps.first?.number == 1)
     }
 
-    @Test func listsTheLatestStepFirstAndThePendingOnesLast() {
-        let step = { (number: Int, state: WorkflowRun.State) in
-            WorkflowStep(number: number, name: "Step \(number)", state: state, startedAt: nil, completedAt: nil)
-        }
-        let job = WorkflowJob(
-            id: 1, name: "test", state: .running, url: nil, startedAt: nil, completedAt: nil,
-            steps: [step(1, .passed), step(2, .skipped), step(3, .passed), step(4, .running), step(5, .queued), step(6, .queued)]
-        )
-        #expect(job.stepsLatestFirst.map(\.number) == [4, 3, 2, 1, 5, 6])
-        let waiting = WorkflowJob(
-            id: 2, name: "test", state: .queued, url: nil, startedAt: nil, completedAt: nil,
-            steps: [step(1, .queued), step(2, .queued)]
-        )
-        #expect(waiting.stepsLatestFirst.map(\.number) == [1, 2])
-    }
-
     @Test func groupsMatrixJobsAndPutsFailuresFirst() {
         let groups = JobGroup.grouping([
             .make(id: 1, name: "lint", state: .passed),
