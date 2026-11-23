@@ -4,6 +4,11 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 
 ## [Unreleased]
 
+## [0.12.2] - 2026-11-23
+
+### Fixed
+- Steps inside a job are back in the order they run, like on GitHub, so the next step sits right below the one running.
+
 ## [0.12.1] - 2026-11-23
 
 ### Changed
@@ -331,7 +336,8 @@ All notable changes to Pullo are listed here, newest first. The format follows [
 - An alert stays open while the pointer is over it.
 - Clicks only land on the visible part of the notch. Everywhere else they go to the app behind it.
 
-[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.12.1...HEAD
+[unreleased]: https://github.com/jordan-cod/pullo/compare/v0.12.2...HEAD
+[0.12.2]: https://github.com/jordan-cod/pullo/compare/v0.12.1...v0.12.2
 [0.12.1]: https://github.com/jordan-cod/pullo/compare/v0.12.0...v0.12.1
 [0.12.0]: https://github.com/jordan-cod/pullo/compare/v0.11.4...v0.12.0
 [0.11.4]: https://github.com/jordan-cod/pullo/compare/v0.11.3...v0.11.4
