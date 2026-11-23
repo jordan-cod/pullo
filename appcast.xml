@@ -3,6 +3,20 @@
     <channel>
         <title>DevNotch</title>
         <item>
+            <title>0.12.2</title>
+            <pubDate>Mon, 23 Nov 2026 20:02:23 +0000</pubDate>
+            <sparkle:version>274</sparkle:version>
+            <sparkle:shortVersionString>0.12.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Fixed</h3></div>
+<ul>
+<li>Steps inside a job are back in the order they run, like on GitHub, so the next step sits right below the one running.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.12.2/Pullo-0.12.2.zip" length="1920544" type="application/octet-stream" sparkle:edSignature="8gmxOZUp+rv3ZoLisFEhvokbLX14KsLBn5ljiHcV8Kn2NMQdEygLc3zclRYlj8XNpkZZUV5BKwcZtTSxBw9hBA=="/>
+        </item>
+        <item>
             <title>0.12.1</title>
             <pubDate>Mon, 23 Nov 2026 19:57:46 +0000</pubDate>
             <sparkle:version>272</sparkle:version>
@@ -34,24 +48,6 @@
 </ul>
 ]]></description>
             <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.12.0/Pullo-0.12.0.zip" length="1920606" type="application/octet-stream" sparkle:edSignature="H6emkCsiFMli0fw43CTLU88SQLms353H3tXHaF9kMWzZB0WFDIkmqA1QqABvLUwOj++NgcLboaYRPZ4Ma959Dw=="/>
-        </item>
-        <item>
-            <title>0.11.4</title>
-            <pubDate>Sun, 25 Oct 2026 18:49:48 +0000</pubDate>
-            <sparkle:version>260</sparkle:version>
-            <sparkle:shortVersionString>0.11.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description><![CDATA[<div class="markdown-heading"><h3 class="heading-element">Changed</h3></div>
-<ul>
-<li>Pullo no longer wakes up on every mouse move: it only follows the pointer while it is over the notch, which cuts its CPU use while you move the mouse elsewhere by about 95%.</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">Fixed</h3></div>
-<ul>
-<li>Opening the panel with the glass style no longer briefly takes about 300 MB of memory. The glass background stays the same size while the panel animates, so it peaks under 30 MB.</li>
-</ul>
-]]></description>
-            <enclosure url="https://github.com/jordan-cod/pullo/releases/download/v0.11.4/Pullo-0.11.4.zip" length="1915251" type="application/octet-stream" sparkle:edSignature="NoHXAg3AMZoL1pxMw+sMG52WPE5NgVvNPF+PrC8FzbFkKGX1uO8aTo8q0uc4/6l3nfVUByQRnUJPKfWrQgubDg=="/>
         </item>
         <item>
             <title>0.8.0-beta.5</title>
